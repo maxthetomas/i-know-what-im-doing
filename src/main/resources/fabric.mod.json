@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "ikwid",
+  "version": "${version}",
+  "name": "I know what I'm doing!",
+  "description": "I know what I'm doing!",
+  "authors": [
+    "maxthetomas"
+  ],
+  "contact": {
+    "sources": "https://github.com/maxthetomas/i-know-what-im-doing",
+    "issues": "https://github.com/maxthetomas/i-know-what-im-doing",
+    "homepage": "https://github.com/maxthetomas/i-know-what-im-doing"
+  },
+  "license": "All-Rights-Reserved",
+  "environment": "client",
+  "entrypoints": {
+    "client": [
+      "ru.maxthetomas.ikwid.iknowwhatimdoing.IKnowWhatImDoing"
+    ]
+  },
+  "mixins": [
+    "IKnowWhatImDoing.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.14",
+    "fabric": "*",
+    "minecraft": ">=${minecraft_version}"
+  }
+}
