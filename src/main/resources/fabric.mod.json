@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "id": "ikwid",
+  "id": "skipbackupscreen",
   "version": "${version}",
-  "name": "I know what I'm doing!",
-  "description": "I know what I'm doing!",
+  "name": "Skip backup screen",
+  "description": "This mod skips backup screen (I know what I'm doing!)",
   "authors": [
     "maxthetomas"
   ],
   "contact": {
     "sources": "https://github.com/maxthetomas/i-know-what-im-doing",
-    "issues": "https://github.com/maxthetomas/i-know-what-im-doing",
+    "issues": "https://github.com/maxthetomas/i-know-what-im-doing/issues",
     "homepage": "https://github.com/maxthetomas/i-know-what-im-doing"
   },
   "license": "All-Rights-Reserved",
@@ -24,7 +24,6 @@
   ],
   "depends": {
     "fabricloader": ">=0.14",
-    "fabric": "*",
-    "minecraft": ">=${minecraft_version}"
+    "minecraft": "1.20.2"
   }
 }

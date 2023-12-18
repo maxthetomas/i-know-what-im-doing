@@ -1,21 +1,14 @@
 package ru.maxthetomas.ikwid.iknowwhatimdoing.mixin;
 
-import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.server.integrated.IntegratedServerLoader;
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.Overwrite;
-import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.ModifyVariable;
 
 @Mixin(IntegratedServerLoader.class)
 public abstract class IntegratedServerLoaderMixin {
-    @Shadow protected abstract void start(Screen parent, String levelName, boolean safeMode, boolean canShowBackupPrompt);
-
-    /**
-     * @author maxthetomas
-     * @reason skip backup prompt
-     */
-    @Overwrite
-    public void start(Screen parent, String levelName) {
-        this.start(parent, levelName, false, false);
+    @ModifyVariable(method = "start(Lnet/minecraft/client/gui/screen/Screen;Ljava/lang/String;ZZ)V", at = @At("HEAD"), index = 3, argsOnly = true, ordinal = 1, name = "canShowBackupPrompt")
+    boolean modifyCanShowBackupPrompt(boolean value) {
+        return false;
     }
 }
